@@ -1,5 +1,6 @@
 // pages/classic/classic.js
 import http from '../../utils/http.js';
+import { apis } from '../../config/apis';
 
 Page({
 
@@ -15,7 +16,7 @@ Page({
    */
   onLoad: function (options) {
     http.request({
-      url: 'classic/latest',
+      url: apis.getLatest, // 'classic/latest',
       success: res => {
         console.log(res)
       }

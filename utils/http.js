@@ -1,8 +1,16 @@
 import { config, tips } from '../config/index.js';
+import { apis, mock } from '../config/apis.js';
 
 class HTTP {
-  // params: url, data, method, success
   request(params) {
+    // 开启 Mock 使用本地数据
+    if (apis.mock) {
+      console.log('mock-->', mock);
+      const urlType = params.url.split('/')[0]; // mock模块
+      params.success(mock[urlType][params.url]);
+      return false;
+    }
+    // params: url, data, method, success
     // [wx.request](https://developers.weixin.qq.com/miniprogram/dev/api/network/request/wx.request.html)
     wx.request({
       url: config.api_base_url + params.url,
