@@ -40,10 +40,15 @@ Component({
       let like = this.properties.like;
       let count = this.properties.count;
       count = like ? count - 1 : count + 1;
-      this.setData({ // 设置properties数据方法
+      this.setData({ // 设置 properties 数据方法
         count,
         like: !like
       })
+      let behavior = this.properties.like ? 'like' : 'cancel';
+      // 激活自定义事件, 参数一：事件名称, 参数二设置事件event事件的detail属性
+      this.triggerEvent('like', { behavior }, {});
+      // 这里的 properties 和 data 数据一模一样，小程序做了合并
+      // console.log(this.properties, this.data);
     }
   }
 })

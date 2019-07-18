@@ -7,7 +7,7 @@ class HTTP {
     if (apis.mock) {
       console.log('mock-->', mock);
       const urlType = params.url.split('/')[0]; // mock模块
-      params.success(mock[urlType][params.url]);
+      params.success && params.success(mock[urlType][params.url]);
       return false;
     }
     // params: url, data, method, success
@@ -38,7 +38,7 @@ class HTTP {
       }
     })
   }
-  
+
   /* wechat 没有私有概念, 这里是一种写法 */
   _show_error(error_code = 1) {
     const tip = tips[error_code];
@@ -51,4 +51,6 @@ class HTTP {
   }
 }
 
-export default new HTTP();
+const http = new HTTP();
+
+export { http, HTTP };
