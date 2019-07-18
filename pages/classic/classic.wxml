@@ -1,3 +1,8 @@
 <!--pages/classic/classic.wxml-->
 <!-- 数据三种来源：wxml、js、服务器 -->
-<v-like bind:like="onLike" like="{{ likeStatus }}" count="{{ likeCount }}"/>
+<view class="container">
+  <view class="header">
+    <v-episode class="episode" index="{{classic.index}}" />
+    <v-like class="like" bind:like="onLike" like="{{ likeStatus }}" count="{{ likeCount }}"/>
+  </view>
+</view>

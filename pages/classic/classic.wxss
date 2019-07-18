@@ -1,1 +1,23 @@
 /* pages/classic/classic.wxss */
+.header {
+  width: 100%; /* 要设置width100%*/
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #f5f5f5;
+  border-bottom: 1px solid #f5f5f5;
+  box-sizing: border-box;
+}
+
+.episode {
+  margin-left: 20rpx;
+  margin-top: 4rpx;
+}
+
+.like {
+  margin-top: 6rpx;
+  margin-right: 4rpx;
+}
+
