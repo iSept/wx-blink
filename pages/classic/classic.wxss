@@ -1,4 +1,11 @@
 /* pages/classic/classic.wxss */
+.container {
+  width: 100%; /* 最好设置width100%*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .header {
   width: 100%; /* 要设置width100%*/
   height: 100rpx;
@@ -19,5 +26,10 @@
 .like {
   margin-top: 6rpx;
   margin-right: 4rpx;
+}
+
+.navi {
+  position: absolute;
+  bottom: 40rpx;
 }
 

@@ -12,7 +12,9 @@ Page({
   data: {
     classic: null, // 也可以省略声明
     likeCount: 0, // 当前期刊点赞数量
-    likeStatus: false  // 当前期刊点赞状态
+    likeStatus: false,  // 当前期刊点赞状态
+    latest: true, // 最新一期期刊(当前期刊)
+    first: false // 第一期期刊(最早期刊)
   },
 
   /**
@@ -34,6 +36,14 @@ Page({
     const behavior = event.detail.behavior;
     let { id, type } = this.data.classic;
     LikeModel.like(behavior, id, type);
+  },
+
+  onPrevious: function(event) {
+    console.log(event);
+  },
+
+  onNext: function(event) {
+    console.log(event);
   },
 
   /**
